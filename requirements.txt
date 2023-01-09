@@ -1,0 +1,8 @@
+numpy
+pandas
+Flask
+pyYaml
+evidently
+dill
+seaborn
+-e .
