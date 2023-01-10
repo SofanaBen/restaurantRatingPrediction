@@ -5,4 +5,4 @@ pyYaml
 evidently
 dill
 seaborn
-# -e .
+-e .
