@@ -1,0 +1,186 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Zomato Bangalore Restaurants | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="Restaurants of Bengaluru" />
+  <meta name="turbolinks-cache-control" content="no-cache" />
+    <meta name="keywords" content="finance,data visualization,restaurants,demographics,k-means" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="SLOK9vA&#x2B;q123MEuTX6uKEg==" type="text/javascript">
+    window["pageRequestStartTime"] = 1673478819316;
+    window["pageRequestEndTime"] = 1673478819397;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+  <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="SLOK9vA&#x2B;q123MEuTX6uKEg==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+    <link rel="canonical" href="/datasets/himanshupoddar/zomato-bangalore-restaurants" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=06cb5cb9eaebcdbf169c" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=c4f5f89c33b29d7320e8" />
+  
+    
+ 
+      <script nonce="SLOK9vA&#x2B;q123MEuTX6uKEg==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="SLOK9vA&#x2B;q123MEuTX6uKEg==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-12629138-1', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Datasets'
+        });
+    </script>
+    <script nonce="SLOK9vA&#x2B;q123MEuTX6uKEg==" async src="https://www.googletagmanager.com/gtag/js?id=UA-12629138-1"></script>
+
+  
+    
+    <meta property="og:url" content="/datasets/himanshupoddar/zomato-bangalore-restaurants" />
+    <meta property="og:title" content="Zomato Bangalore Restaurants" />
+    <meta property="og:description" content="Restaurants of Bengaluru" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/153420/352891/c163500aee56f5201e1187c42e19471c/dataset-card.jpg?t=2019-03-31-11-02-46" />
+    <meta property="fb:app_id" content="2665027677054710" />
+
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+    <script nonce="SLOK9vA+q123MEuTX6uKEg==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Zomato Bangalore Restaurants","description":"### Context\n\nI was always fascinated by the food culture of Bengaluru. Restaurants from all over the world can be found here in Bengaluru. From United States to Japan,  Russia to Antarctica, you get all type of cuisines here.  Delivery, Dine-out, Pubs, Bars, Drinks,Buffet, Desserts you name it and Bengaluru has it. Bengaluru  is best place for foodies. The number of restaurant are increasing day by day. Currently which stands at approximately 12,000 restaurants. With such an high number of restaurants. This industry hasn't been saturated yet. And new restaurants are opening every day. However it has become difficult for them to compete with already established restaurants.  The key issues that continue to pose a challenge to them include high real estate costs, rising food costs, shortage of quality manpower, fragmented supply chain and over-licensing.  This Zomato data aims at analysing demography of the location. Most importantly it will help new restaurants in deciding their theme, menus, cuisine, cost etc for a particular location. It also aims at finding similarity between neighborhoods of Bengaluru on the basis of food. The dataset also contains reviews for each of the restaurant which will help in finding overall rating for the place.\n\n### Content\n\nThe basic idea of analyzing the Zomato dataset is to get a fair idea about the factors affecting the establishment\nof different types of restaurant at different places in Bengaluru, aggregate rating of each restaurant, Bengaluru\nbeing one such city has more than 12,000 restaurants with restaurants serving dishes from all over the world.\nWith each day new restaurants opening the industry has’nt been saturated yet and the demand is increasing\nday by day. Inspite of increasing demand it however has become difficult for new restaurants to compete with\nestablished restaurants. Most of them serving the same food. Bengaluru being an IT capital of India. Most of\nthe people here are dependent mainly on the restaurant food as they don’t have time to cook for themselves.\nWith such an overwhelming demand of restaurants it has therefore become important to study the demography\nof a location. What kind of a food is more popular in a locality. Do the entire locality loves vegetarian food.\nIf yes then is that locality populated by a particular sect of people for eg. Jain, Marwaris, Gujaratis who are\nmostly vegetarian. These kind of analysis can be done using the data, by studying the factors such as\n• Location of the restaurant\n• Approx Price of food\n• Theme based restaurant or not\n• Which locality of that city serves that cuisines with maximum number of restaurants\n• The needs of people who are striving to get the best cuisine of the neighborhood\n• Is a particular neighborhood famous for its own kind of food.\n\n“Just so that you have a good meal the next time you step out”\n\nThe data is accurate to that available on the zomato website until 15 March 2019.\nThe data was scraped from Zomato in two phase. After going through the structure of the website I found that for each neighborhood there are 6-7 category of restaurants viz. Buffet, Cafes, Delivery, Desserts, Dine-out, Drinks &amp; nightlife, Pubs and bars. \n\nPhase I, \n\nIn Phase I of extraction only the URL, name and address of the restaurant were extracted which were visible on the front page. The URl's for each of the restaurants on the zomato were recorded in the csv file so that later the data can be extracted individually for each restaurant. This made the extraction process easier and reduced the extra load on my machine. The data for each neighborhood and each category can be found [here][1]\n\nPhase II, \n\nIn Phase II the recorded data for each restaurant and each category was read and data for each restaurant was scraped individually. 15 variables were scraped in this phase. For each of the neighborhood and for each category their online_order, book_table, rate, votes, phone, location, rest_type, dish_liked, cuisines, approx_cost(for two people), reviews_list, menu_item was extracted. See section 5 for more details about the variables.\n\n\n### Acknowledgements\n\nThe data scraped was entirely for educational purposes only.  Note that I don’t claim any copyright for the data.  All copyrights for the data is owned by Zomato Media Pvt.  Ltd..  \n\n\n### Inspiration\nI was always astonished by how each of the restaurants are able to keep up the pace inspite of that cutting edge competition. And what factors should be kept in mind if someone wants to open new restaurant. Does the demography of an area matters? Does location of a  particular type of restaurant also depends on the people living in that area? Does the theme of the restaurant matters? Is a food chain category restaurant likely to have more customers than its counter part? Are any neighborhood similar ? If two neighborhood are similar does that mean these are related or particular group of people live in the neighborhood or these are the places to it? What kind of a food is more popular in a locality. Do the entire locality loves vegetarian food. If yes then is that locality populated by a particular sect of people for eg. Jain, Marwaris, Gujaratis who are mostly vegetarian. There are infacts dozens of question in my mind. lets try to find out the answer with this dataset. \n\nFor detailed discussion of the business problem, please visit this [link](https://github.com/poddarhimanshu/Coursera_Capstone/blob/master/Final%20Project/Business_Problem.pdf)\n\nPlease visit this [link][2] to find codebook cum documentation for the data\n\n\n  [1]: https://drive.google.com/open?id=1duQ9-dXuQqP5tnz5autNqgyyI3EiY4cE\n  [2]: https://github.com/poddarhimanshu/Coursera_Capstone/blob/master/Final%20Project/Data%20Scraping/Documentation.pdf\n\n\nGITHUB LINk : https://github.com/poddarhimanshu/Zomato-Bengaluru-Restaurants/tree/master/Final%20Project","url":"https://www.kaggle.com/himanshupoddar/zomato-bangalore-restaurants","version":1,"keywords":["subject, people and society, business, finance","technique, data visualization","subject, health and fitness, food, restaurants","subject, people and society, social science, demographics","technique, k-means"],"license":{"@type":"CreativeWork","name":"Data files © Original Authors","url":""},"identifier":["153420"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"Himanshu Poddar","url":"https://www.kaggle.com/himanshupoddar","image":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1811968-kg.jpg"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/datasets/himanshupoddar/zomato-bangalore-restaurants/download?datasetVersionNumber=1","contentSize":"93341357 bytes"}],"commentCount":28,"dateModified":"2019-03-31T09:48:43.983Z","discussionUrl":"https://www.kaggle.com/himanshupoddar/zomato-bangalore-restaurants/discussion","alternateName":"Restaurants of Bengaluru","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/153420/352891/c163500aee56f5201e1187c42e19471c/dataset-card.jpg?t=2019-03-31-11-02-46","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":28},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":48920},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":304803},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":1191}]}</script>
+
+
+  
+    
+
+  
+    
+
+
+    <script nonce="SLOK9vA&#x2B;q123MEuTX6uKEg==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="SLOK9vA&#x2B;q123MEuTX6uKEg==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="SLOK9vA+q123MEuTX6uKEg==" src="/static/assets/runtime.js?v=33dae4729fafcd3d32bd" data-turbolinks-track="reload"></script>
+  <script nonce="SLOK9vA+q123MEuTX6uKEg==" src="/static/assets/vendor.js?v=b55898abc0dc25732071" data-turbolinks-track="reload"></script>
+  <script nonce="SLOK9vA+q123MEuTX6uKEg==" src="/static/assets/app.js?v=b0576c1b5688c84b11ab" data-turbolinks-track="reload"></script>
+    <script nonce="SLOK9vA&#x2B;q123MEuTX6uKEg==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '0'
+      }
+    </script>
+</head>
+
+<body data-turbolinks="false">
+  <main>
+    
+
+
+
+
+
+<div id="site-container"></div>
+<div data-component-name="NavigationContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="SLOK9vA+q123MEuTX6uKEg==">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"navigationType":"BOTH_NAV"});performance && performance.mark && performance.mark("NavigationContainer.componentCouldBootstrap");</script>
+<div id="site-body" class="hide">
+    
+
+<div data-component-name="DatasetMaterialContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="SLOK9vA+q123MEuTX6uKEg==">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"basics":{"datasetId":153420,"slug":"zomato-bangalore-restaurants","title":"Zomato Bangalore Restaurants","description":"### Context\n\nI was always fascinated by the food culture of Bengaluru. Restaurants from all over the world can be found here in Bengaluru. From United States to Japan,  Russia to Antarctica, you get all type of cuisines here.  Delivery, Dine-out, Pubs, Bars, Drinks,Buffet, Desserts you name it and Bengaluru has it. Bengaluru  is best place for foodies. The number of restaurant are increasing day by day. Currently which stands at approximately 12,000 restaurants. With such an high number of restaurants. This industry hasn\u0027t been saturated yet. And new restaurants are opening every day. However it has become difficult for them to compete with already established restaurants.  The key issues that continue to pose a challenge to them include high real estate costs, rising food costs, shortage of quality manpower, fragmented supply chain and over-licensing.  This Zomato data aims at analysing demography of the location. Most importantly it will help new restaurants in deciding their theme, menus, cuisine, cost etc for a particular location. It also aims at finding similarity between neighborhoods of Bengaluru on the basis of food. The dataset also contains reviews for each of the restaurant which will help in finding overall rating for the place.\n\n### Content\n\nThe basic idea of analyzing the Zomato dataset is to get a fair idea about the factors affecting the establishment\nof different types of restaurant at different places in Bengaluru, aggregate rating of each restaurant, Bengaluru\nbeing one such city has more than 12,000 restaurants with restaurants serving dishes from all over the world.\nWith each day new restaurants opening the industry has\u2019nt been saturated yet and the demand is increasing\nday by day. Inspite of increasing demand it however has become difficult for new restaurants to compete with\nestablished restaurants. Most of them serving the same food. Bengaluru being an IT capital of India. Most of\nthe people here are dependent mainly on the restaurant food as they don\u2019t have time to cook for themselves.\nWith such an overwhelming demand of restaurants it has therefore become important to study the demography\nof a location. What kind of a food is more popular in a locality. Do the entire locality loves vegetarian food.\nIf yes then is that locality populated by a particular sect of people for eg. Jain, Marwaris, Gujaratis who are\nmostly vegetarian. These kind of analysis can be done using the data, by studying the factors such as\n\u2022 Location of the restaurant\n\u2022 Approx Price of food\n\u2022 Theme based restaurant or not\n\u2022 Which locality of that city serves that cuisines with maximum number of restaurants\n\u2022 The needs of people who are striving to get the best cuisine of the neighborhood\n\u2022 Is a particular neighborhood famous for its own kind of food.\n\n\u201CJust so that you have a good meal the next time you step out\u201D\n\nThe data is accurate to that available on the zomato website until 15 March 2019.\nThe data was scraped from Zomato in two phase. After going through the structure of the website I found that for each neighborhood there are 6-7 category of restaurants viz. Buffet, Cafes, Delivery, Desserts, Dine-out, Drinks \u0026 nightlife, Pubs and bars. \n\nPhase I, \n\nIn Phase I of extraction only the URL, name and address of the restaurant were extracted which were visible on the front page. The URl\u0027s for each of the restaurants on the zomato were recorded in the csv file so that later the data can be extracted individually for each restaurant. This made the extraction process easier and reduced the extra load on my machine. The data for each neighborhood and each category can be found [here][1]\n\nPhase II, \n\nIn Phase II the recorded data for each restaurant and each category was read and data for each restaurant was scraped individually. 15 variables were scraped in this phase. For each of the neighborhood and for each category their online_order, book_table, rate, votes, phone, location, rest_type, dish_liked, cuisines, approx_cost(for two people), reviews_list, menu_item was extracted. See section 5 for more details about the variables.\n\n\n### Acknowledgements\n\nThe data scraped was entirely for educational purposes only.  Note that I don\u2019t claim any copyright for the data.  All copyrights for the data is owned by Zomato Media Pvt.  Ltd..  \n\n\n### Inspiration\nI was always astonished by how each of the restaurants are able to keep up the pace inspite of that cutting edge competition. And what factors should be kept in mind if someone wants to open new restaurant. Does the demography of an area matters? Does location of a  particular type of restaurant also depends on the people living in that area? Does the theme of the restaurant matters? Is a food chain category restaurant likely to have more customers than its counter part? Are any neighborhood similar ? If two neighborhood are similar does that mean these are related or particular group of people live in the neighborhood or these are the places to it? What kind of a food is more popular in a locality. Do the entire locality loves vegetarian food. If yes then is that locality populated by a particular sect of people for eg. Jain, Marwaris, Gujaratis who are mostly vegetarian. There are infacts dozens of question in my mind. lets try to find out the answer with this dataset. \n\nFor detailed discussion of the business problem, please visit this [link](https://github.com/poddarhimanshu/Coursera_Capstone/blob/master/Final%20Project/Business_Problem.pdf)\n\nPlease visit this [link][2] to find codebook cum documentation for the data\n\n\n  [1]: https://drive.google.com/open?id=1duQ9-dXuQqP5tnz5autNqgyyI3EiY4cE\n  [2]: https://github.com/poddarhimanshu/Coursera_Capstone/blob/master/Final%20Project/Data%20Scraping/Documentation.pdf\n\n\nGITHUB LINk : https://github.com/poddarhimanshu/Zomato-Bengaluru-Restaurants/tree/master/Final%20Project","viewCount":304803,"downloadCount":48920,"scriptCount":323,"topicCount":28,"owner":{"id":1811968,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1811968-kg.jpg","name":"Himanshu Poddar","profileUrl":"/himanshupoddar","slug":"himanshupoddar","userTier":"CONTRIBUTOR"},"license":{"id":11,"name":"Data files \u00A9 Original Authors"},"overview":"Restaurants of Bengaluru","collaboratorList":{"owner":{"userId":1811968,"profileUrl":"/himanshupoddar","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1811968-kg.jpg","name":"Himanshu Poddar","slug":"himanshupoddar","userTier":"CONTRIBUTOR","type":"OWNER"}},"coverImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/153420/352891/c163500aee56f5201e1187c42e19471c/dataset-cover.jpg?t=2019-03-31-11-02-46","data":{"totalSize":93341357,"isFileset":true,"canDownload":true,"firestorePath":"qN48oJNnMh4H98ZK18NW/versions/tLWHPyi9rFWVzhJ57UZ3","downloadUrl":"/datasets/himanshupoddar/himanshupoddar/download?datasetVersionNumber=1","versionId":367004,"id":164765},"voteCount":1191,"medalUrl":"/static/images/medals/datasets/goldl@2x.png","downloadUrl":"/datasets/himanshupoddar/zomato-bangalore-restaurants/download?datasetVersionNumber=1","lastUpdateTime":"2019-03-31T09:48:43.983Z","datasetVersionNumber":1,"creatorDisplayName":"Himanshu Poddar","cardImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/153420/352891/c163500aee56f5201e1187c42e19471c/dataset-card.jpg?t=2019-03-31-11-02-46","categories":{"tags":[{"id":11108,"name":"finance","fullPath":"subject \u003E people and society \u003E business \u003E finance","listingUrl":"/datasets?group=public\u0026tagids=11108","description":"The finance tag covers datasets and kernels about money and investing. If you need to test some new cryptocurrency investment strategies or ward off those pesky credit card fraud enthusiasts, then you\u0027ve come to the right place.","datasetCount":4969,"competitionCount":10,"notebookCount":3692,"tagUrl":"/tags/finance","displayName":"Finance","fontAwesomeIcon":"bar-chart"},{"id":13208,"name":"data visualization","fullPath":"technique \u003E data visualization","listingUrl":"/datasets?group=public\u0026tagids=13208","description":"The art of depicting data in a visual format. Using charts and graphs, it is easier to observe patterns, relationships, and outliers.","datasetCount":2826,"notebookCount":29042,"tagUrl":"/tags/data-visualization","displayName":"Data Visualization"},{"id":16121,"name":"restaurants","fullPath":"subject \u003E health and fitness \u003E food \u003E restaurants","listingUrl":"/datasets?group=public\u0026tagids=16121","description":"","datasetCount":967,"notebookCount":695,"tagUrl":"/tags/restaurants","displayName":"Restaurants"},{"id":11204,"name":"demographics","fullPath":"subject \u003E people and society \u003E social science \u003E demographics","listingUrl":"/datasets?group=public\u0026tagids=11204","description":"Demographics cover different aspects of life: youth, religion, housing, employment, taxes and mortality. This tag contains census data that describe various populations and communities.","datasetCount":627,"competitionCount":1,"notebookCount":249,"tagUrl":"/tags/demographics","displayName":"Demographics","fontAwesomeIcon":"users"},{"id":13408,"name":"k-means","fullPath":"technique \u003E k-means","listingUrl":"/datasets?group=public\u0026tagids=13408","description":"","datasetCount":79,"notebookCount":1156,"tagUrl":"/tags/k-means","displayName":"K-Means"}]},"datasetExternalUrl":"https://www.kaggle.com/datasets/himanshupoddar/zomato-bangalore-restaurants","forumId":163855,"datasetVersionId":352891,"canCreateTasks":true,"moderationStatus":"PRIVATED_MODERATION_STATUS_NO_ABUSE","lastVersionNumber":1,"diffType":"VERSIONED"},"@wf": "Datasets.DatasetMaterialDtoWireFormat3"});performance && performance.mark && performance.mark("DatasetMaterialContainer.componentCouldBootstrap");</script><script nonce="SLOK9vA&#x2B;q123MEuTX6uKEg==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="SLOK9vA&#x2B;q123MEuTX6uKEg==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const useProdHosts = ["www.kaggle.com", "admin.kaggle.com"];
+    const subdomain = useProdHosts.includes(window.location.hostname) ? "www" : "staging";
+
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    lib.src = `https://${subdomain}.kaggleusercontent.com/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+
+
+
+</div>
+
+
+
+
+  </main>
+</body>
+
+</html>
