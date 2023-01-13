@@ -35,6 +35,8 @@ class DataIngestion:
             tgz_file_path = os.path.join(tgz_download_dir, restaurant_rating_file_name)
 
             logging.info(f"Downloading file from :[{download_url}] into :[{tgz_file_path}]")
+
+            # This is the package to download the data
             urllib.request.urlretrieve(download_url, tgz_file_path)
             logging.info(f"File :[{tgz_file_path}] has been downloaded successfully.")
             return tgz_file_path
