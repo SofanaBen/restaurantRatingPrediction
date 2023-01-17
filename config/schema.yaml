@@ -1,4 +1,4 @@
-numerical_columns:
+  columns:
     Restaurant ID: int64  
     Restaurant_Name: object 
     Country Code: int64  
@@ -17,33 +17,23 @@ numerical_columns:
     Switch to order menu: object 
     Price_Range: int64  
     Rating: float64
-    Rating: color object 
+    Rating color: object 
     Review: object 
     Votes: int64  
 
-    numerical_columns:
-      - Restaurant ID   
-      - Country Code   
-      - lon   
-      - lat   
-      - cost_for_two   
-      - Price_Range   
-      - Rating   
-      - Votes 
 
-    categorical_columns:
-      - Restaurant_Name  
-      - City  
-      - Address  
-      - Locality  
-      - Locality Verbose  
-      - Cuisines  
-      - Currency  
-      - Has Table booking  
-      - Has Online delivery  
-      - Is delivering now  
-      - Switch to order menu  
-      - Rating color  
-      - Review  
+  numerical_columns: 
+    - cost_for_two   
+    - Price_Range    
+    - Votes 
+
+  categorical_columns:
+    - Cuisines  
+    - Has Table booking  
+    - Has Online delivery  
+    - Is delivering now  
+    - Switch to order menu  
+    - Rating color  
+    - Review  
   
   target_column: Rating

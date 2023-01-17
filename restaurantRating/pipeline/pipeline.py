@@ -6,10 +6,11 @@ from restaurantRating.config.configuration import Configuration
 from restaurantRating.logger import logging, get_log_file_name
 from restaurantRating.exception import RestaurantRatingException
 from typing import List
-from restaurantRating.entity.artifact_entity import DataIngestionArtifact,DataValidationArtifact
+from restaurantRating.entity.artifact_entity import DataIngestionArtifact,DataValidationArtifact, DataTransformationArtifact
 from restaurantRating.entity.config_entity import DataIngestionConfig
 from restaurantRating.component.data_ingestion import DataIngestion
 from restaurantRating.component.data_validation import DataValidation
+from restaurantRating.component.data_transformation import DataTransformation
 
 # import os, sys
 from collections import namedtuple
@@ -44,14 +45,45 @@ class Pipeline():
         except Exception as e:
             raise RestaurantRatingException(e, sys) from e
 
+    
+    def start_data_validation(self, data_ingestion_artifact: DataIngestionArtifact) \
+            -> DataValidationArtifact:
+        try:
+            data_validation = DataValidation(data_validation_config=self.config.get_data_validation_config(),
+                                             data_ingestion_artifact=data_ingestion_artifact
+                                             )
+            return data_validation.initiate_data_validation()
+        except Exception as e:
+            raise RestaurantRatingException(e, sys) from e
+
+    def start_data_transformation(self,
+                                  data_ingestion_artifact: DataIngestionArtifact,
+                                  data_validation_artifact: DataValidationArtifact
+                                  ) -> DataTransformationArtifact:
+        try:
+            data_transformation = DataTransformation(
+                data_transformation_config=self.config.get_data_transformation_config(),
+                data_ingestion_artifact=data_ingestion_artifact,
+                data_validation_artifact=data_validation_artifact
+            )
+            return data_transformation.initiate_data_transformation()
+        except Exception as e:
+            raise RestaurantRatingException(e, sys)
+
+
     def run_pipeline(self):
         try:
-            # data ingestion
+            # Data ingestion
             data_ingestion_artifact = self.start_data_ingestion()
 
-            # date validation
+            # Data validation
             data_validation_artifact = self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
 
+            # Data tansformation
+            data_transformation_artifact = self.start_data_transformation(
+                data_ingestion_artifact=data_ingestion_artifact,
+                data_validation_artifact=data_validation_artifact
+            )
 
         except Exception as e:
             raise RestaurantRatingException(e, sys) from e
