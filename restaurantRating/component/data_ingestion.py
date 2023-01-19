@@ -73,20 +73,28 @@ class DataIngestion:
 
 
             logging.info(f"Reading csv file: [{restaurant_rating_file_path}]")
-            restaurant_rating_data_frame = pd.read_csv(restaurant_rating_file_path)
+            restaurant_rating_data_frame = pd.read_csv(restaurant_rating_file_path, encoding='latin-1')
 
         
 
             logging.info(f"Splitting data into train and test")
             strat_train_set = None
             strat_test_set = None
-
+            restaurant_rating_data_frame['Rating'] = restaurant_rating_data_frame['Rating'].astype(int)
             # split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
-            splits = ShuffleSplit(n_splits=4, test_size=0.2, random_state=42)
+            # splits = ShuffleSplit(n_splits=4, test_size=0.2, random_state=42)
 
-            for train_index,test_index in splits.split(restaurant_rating_data_frame, restaurant_rating_data_frame["Rating"]):
-                strat_train_set = restaurant_rating_data_frame
-                strat_test_set = restaurant_rating_data_frame
+            # for train_index,test_index in splits.split(restaurant_rating_data_frame, restaurant_rating_data_frame["Rating"]):
+            #     strat_train_set = restaurant_rating_data_frame
+            #     strat_test_set = restaurant_rating_data_frame
+
+
+            split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
+            #splits = ShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
+
+            for train_index,test_index in split.split(restaurant_rating_data_frame,restaurant_rating_data_frame['Rating']):
+                strat_train_set = restaurant_rating_data_frame.loc[train_index].drop(["Restaurant ID",'Cuisines'],axis=1)
+                strat_test_set = restaurant_rating_data_frame.loc[test_index].drop(["Restaurant ID",'Cuisines'],axis=1) 
 
             train_file_path = os.path.join(self.data_ingestion_config.ingested_train_dir,
                                             file_name)

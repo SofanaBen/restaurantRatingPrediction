@@ -27,8 +27,7 @@
     - Price_Range    
     - Votes 
 
-  categorical_columns:
-    - Cuisines  
+  categorical_columns: 
     - Has Table booking  
     - Has Online delivery  
     - Is delivering now  
