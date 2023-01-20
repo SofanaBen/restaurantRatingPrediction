@@ -1,5 +1,7 @@
 best_model:
-  model_path: /Users/sofanabenoutiq/Desktop/restaurantRatingPredicti/restaurantRatingPrediction/restautantRating/artifact/model_trainer/2023-01-19-14-16-46/trained_model/model.pkl
+  model_path: /Users/sofanabenoutiq/Desktop/restaurantRatingPredicti/restaurantRatingPrediction/restautantRating/artifact/model_trainer/2023-01-19-19-03-04/trained_model/model.pkl
 history:
   2023-01-19-14-16-46:
     model_path: /Users/sofanabenoutiq/Desktop/restaurantRatingPredicti/restaurantRatingPrediction/restautantRating/artifact/model_trainer/2023-01-19-14-10-18/trained_model/model.pkl
+  2023-01-19-19-03-04:
+    model_path: /Users/sofanabenoutiq/Desktop/restaurantRatingPredicti/restaurantRatingPrediction/restautantRating/artifact/model_trainer/2023-01-19-14-16-46/trained_model/model.pkl
