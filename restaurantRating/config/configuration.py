@@ -1,6 +1,6 @@
 
-from restaurantRating.entity.config_entity import DataIngestionConfig,TrainingPipelineConfig, DataValidationConfig, DataTransformationConfig,  \
-ModelTrainerConfig, ModelEvaluationConfig, ModelPusherConfig
+from restaurantRating.entity.config_entity import DataIngestionConfig, DataTransformationConfig,DataValidationConfig,   \
+ModelTrainerConfig,ModelEvaluationConfig,ModelPusherConfig,TrainingPipelineConfig
 from restaurantRating.util.util import read_yaml_file
 from restaurantRating.logger import logging
 import sys,os
