@@ -1,9 +1,29 @@
-# Travel-Package-Prediction-Projekt
+# Restaurant_Rating_prediction
 
-machine_learning_project
+This is a Maching learning Project with the lovely sofanita :) 
 
-This is a Classification Project Model 
-The  travel company dataset is used to analyze the customers' information and build a model to predict the potential customer who is going to purchase the newly introduced package
+
+# Restaurant Rating Prediction 
+
+In this Project, we are going to see an End to End Project kind thing on  Restaurant Descriptive Analytics and Predicting Rating for Each restaurant depends on its facilities and Features that each restaurant provides.
+The basic idea of analyzing the dataset is to get a fair idea about the factors affecting the establishment of different types of the restaurant at different places, aggregate rating of each restaurant.
+From all the Data available, we can bring out some neat insights or conclusions such as
+
+Which franchise has the highest number of Restaurants?
+
+How many Restaurants are accepting online orders?
+
+How many have a book table facility?
+
+Which location has the highest number of Restaurants?
+
+How many types of Restaurant types are there?
+
+What is the most liked Restaurant type?
+
+What is the Average cost for 2 persons?
+
+What is the most liked Dish type?
 
 ### Software and Account Requirement.
 
@@ -32,35 +52,29 @@ pip install -r requirements.txt
 To Add files to git
 
 git add .
-OR
 
-git add <file_name>
-Note: To ignore file or folder from git we can write name of file/folder in .gitignore file
+git add <file_name> Note: To ignore file or folder from git we can write name of file/folder in .gitignore file
 
 To check the git status
 
-git status
-To check all version maintained by git
+git status To check all version maintained by git
 
-git log
-To create version/commit all changes by git
+git log To create version/commit all changes by git
 
-git commit -m "message"
-To send version/changes to github
+git commit -m "message" To send version/changes to github
 
-git push origin main
-To check remote url
+git push origin main To check remote url
 
-git remote -v
-To setup CI/CD pipeline in heroku we need 3 information
+git remote -v To setup CI/CD pipeline in heroku we need 3 information
 
-HEROKU_EMAIL = ottizoubairi@gmail.com
-HEROKU_API_KEY = <>
-HEROKU_APP_NAME = travelpackage-pred
+HEROKU_EMAIL = HEROKU_API_KEY = HEROKU_APP_NAME = 
 
-## 📑Documentation
+📑Documentation
 
-Detailed Project Report , Archicture, LLD, HLD, Wireframe are in Github Project Architecture Folder.
 
-## Explanation Video:
-https://youtu.be/-6rRIefjE20
+[Detailed Project Report,High Level Document,Low Level Document,Architecture Document,Wireframe Document] are in Github Project_Architecture Folder.
+
+
+Explanation Video:
+
+https://www.linkedin.com/in/othmane-zoubairi-/
