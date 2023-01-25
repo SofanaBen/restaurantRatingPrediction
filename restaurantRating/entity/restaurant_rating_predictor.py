@@ -63,7 +63,7 @@ class RestaurantRatingData:
         except Exception as e:
             raise RestaurantRatingException(e, sys) from e
 
-    def get_housing_data_as_dict(self):
+    def get_restaurant_rating_data_as_dict(self):
         try:
             input_data = {
                 "cost_for_two": [self.cost_for_two],   

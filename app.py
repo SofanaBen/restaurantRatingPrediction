@@ -33,8 +33,8 @@ RATING_VALUE_KEY = "Rating"
 app = Flask(__name__)
 
 
-@app.route('/artifact', defaults={'req_path': 'RestaurantRating'})
-@app.route('/artifact/<path:req_path>')
+@app.route('/restaurantRating/artifact', defaults={'req_path': 'restaurantRating'})
+@app.route('/restaurantRating/artifact/<path:req_path>')
 def render_artifact_dir(req_path):
     os.makedirs("RestaurantRating", exist_ok=True)
     # Joining the base and the requested path
@@ -100,7 +100,7 @@ def train():
     return render_template('train.html', context=context)
 
 
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/predict', methods=['GET','POST'])
 def predict():
     context = {
         RESTAURANT_RATING_DATA_KEY: None,
@@ -108,15 +108,15 @@ def predict():
     }
 
     if request.method == 'POST':
-        cost_for_two: int(request.form['cost_for_two'])  
-        Price_Range: int(request.form['Price_Range'])  
-        Votes: int(request.form['Votes'])
-        Has_Table_booking: request.form['Has_Table_booking'] 
-        Has_Online_delivery:request.form['Has_Online_delivery']
-        Is_delivering_now: request.form['Is_delivering_now'] 
-        Switch_to_order_menu: request.form['Switch_to_order_menu'] 
-        Rating_color: request.form['Rating_color'] 
-        Review: request.form['Review']
+        cost_for_two = int(request.form['cost_for_two'])  
+        Price_Range = int(request.form['Price_Range'])  
+        Votes = int(request.form['Votes'])
+        Has_Table_booking = request.form['Has_Table_booking'] 
+        Has_Online_delivery =request.form['Has_Online_delivery']
+        Is_delivering_now = request.form['Is_delivering_now'] 
+        Switch_to_order_menu = request.form['Switch_to_order_menu'] 
+        Rating_color = request.form['Rating_color'] 
+        Review = request.form['Review']
 
         
 
